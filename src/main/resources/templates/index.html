@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script th:inline="javascript">
+        window.onload = function () {
+            if([[${notice}]] == "1")
+                alert('注册成功');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苏大学生作业提交系统</title>
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="css/index_css.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body background="image/login_bck.png">
+    <!-- 主体 -->
+    <div class="main_body">
+        <!-- 左半边 -->
+        <div class="left_body">
+            <!-- 文字盒 -->
+            <div class="notice">
+                <div class="im"><img src="image/logo_school.png"/></div>
+                
+                <h1>通知</h1>
+                <div class="main_notice" style="word-break: break-all;">
+                    <!-- 正文测试 -->
+                    <p>本系统为苏州大学实验室开发测试使用，暂时不支持商业性质的使用</p>
+                
+                </div>
+            </div>
+        </div>
+        <!-- 右半边 -->
+        <form class="right_body" action="homeworks.html" method="post" th:action="@{/index}">
+            <h1>学生登陆系统</h1>
+            <!-- sno -->
+            <div class="sno">
+                <h2>学号：</h2>
+                <input type="text" placeholder="请输入学号" name="userAccount" class="form-control">
+            </div>
+            <label style="color: red" th:text="${login_notice}"></label>
+            <!-- 密码 -->
+            <div class="password">
+                <h2>密码：</h2>
+                <input name="userPassword" placeholder="请输入密码" type="password" class="form-control">
+            </div>
+            <!-- 忘记密码 -->
+            <div class="forget_password">
+                <a href="#">忘记密码|</a>
+                <a href="register.html">注册账号</a>
+            </div>
+            <div class="ok">
+                <button type="submit">确定登陆</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

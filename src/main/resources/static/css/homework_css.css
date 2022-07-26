@@ -1,0 +1,43 @@
+.topall{
+    margin: 0px auto;
+    width: 1200px;
+    height: 30px;
+    background-color: rgb(246, 246, 246);
+}
+.topall a{
+    color:#333;
+    line-height: 30px;
+    display: block;
+    float: right;
+    font-size: 10px;
+}
+.topall a:hover{
+    color: blue;
+}
+.mian_body{
+    width: 1200px;
+    height:600px;
+    margin: 10px auto;
+    background-color:rgba(216, 234, 230,0.8);
+}
+.mian_body .tbe{
+    height: 400px;
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.tda{
+    width: 700px;
+}
+.tda2{
+    width: 700px;
+    height:400px;
+}
+.mian_body input{
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+}

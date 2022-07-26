@@ -1,0 +1,89 @@
+.topall{
+    margin: 0px auto;
+    width: 1200px;
+    height: 30px;
+    background-color: rgb(246, 246, 246);
+}
+.topall a{
+    color:#333;
+    line-height: 30px;
+    display: block;
+    float: right;
+    font-size: 10px;
+}
+.topall a:hover{
+    color: blue;
+}
+.main_body{
+    background-color: rgba(246, 246, 246,0.8);;
+    margin: 0px auto;
+    width: 1200px;
+    height:800px;
+    border-top: 1px solid #333;
+}
+.class_havelaunch_fix{
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-right: 1px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-left:1px solid #333 ;
+}
+.class_havelaunch{
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-right: 1px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-left:1px solid #333 ;
+}
+.class_havelaunch h1{
+    font-size: 20px;
+}
+.class_havelaunch p{
+    display: block;
+    float: left;
+    line-height: 100px;
+}
+.class_havelaunch select{
+    height: 30px;
+    width: 200px;
+    border-right: 1px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    margin: 35px auto;
+}
+.class_nolaunch
+{
+    width: 1000px;
+    height: 450px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-right: 1px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-left:1px solid #333 ;
+}
+.class_nolaunch h1{
+    font-size: 20px;
+}
+.class_nolaunch .launch .table_a #a_td{
+    width: 600px;
+}
+.class_nolaunch .launch .table_a #b_td{
+    width: 600px;
+    height: 150px;
+}
+.class_nolaunch .launch .table_a #b_td textarea{
+    height: 150px;
+    width: 550px;
+}
+.button_one{
+    width: 150px;
+    height: 70px;
+    margin: 20px auto;
+}

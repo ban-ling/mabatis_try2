@@ -1,0 +1,42 @@
+.topall{
+    margin: 0px auto;
+    width: 1200px;
+    height: 30px;
+    background-color: rgb(246, 246, 246);
+}
+.topall a{
+    color:#333;
+    line-height: 30px;
+    display: block;
+    float: right;
+    font-size: 10px;
+}
+.topall a:hover{
+    color: blue;
+}
+.other_body{
+    width: 1200px;
+    height: 45px;
+    margin: 5px auto;
+    background-color: rgba(246, 246, 246,0.8);
+}
+.other_body input{
+    display: block;
+    float: right;
+    margin-right: 10px;
+    width: 80px;
+    height: 40px;
+    line-height: 60px;
+}
+.main_body{
+    background-color: rgba(246, 246, 246,0.6);;
+    margin: 10px auto;
+    width: 1200px;
+    height:1800px;
+    
+}
+.main_body .table_a{
+    width: 1000px;
+    height: 1600px;
+    margin: 30px auto;
+}

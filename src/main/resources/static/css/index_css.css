@@ -1,0 +1,128 @@
+.main_body{
+    margin: 50px auto;
+    width: 1000px;
+    height: 600px;
+}
+.main_body .left_body{
+    width: 400px;
+    height: 600px;
+    float: left;
+    background-color:rgba(76,85,210,0.7);
+}
+.main_body .right_body{
+    width: 600px;
+    height: 600px;
+    float: left;
+    background-color:rgba(237,239,251,0.7);
+}
+.left_body .notice{
+    margin: 40px auto;
+    height: 520px;
+    width: 360px;
+    
+}
+.left_body .notice .im{
+    width:200px;
+    height: 72px;
+
+}
+.left_body .notice .im img{
+    width:300px;
+    height: 72px;
+    
+
+}
+.left_body .notice h1{
+    text-align: center;
+}
+.main_notice{
+    width: 320px;
+    margin: 40px auto;
+    height:300px;
+    background-color:rgba(237,239,251,0.7);
+    font-weight: 500;
+}
+.main_notice p{
+    text-indent: 2em;
+}
+.right_body h1{
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+}
+.sno{
+    margin: auto;
+    margin-top: 90px;
+    width: 500px;
+    height:80px;
+    
+}
+.password{
+    margin: auto;
+    margin-top: 30px;
+    width: 500px;
+    height:80px;
+    
+}
+.ok{
+    margin: auto;
+    margin-top: 50px;
+    width: 200px;
+    height:70px;
+    background-color:rgba(237,239,251,0.7);
+}
+.ok button{
+    font-size: 18px;
+    width: 200px;
+    height:70px;
+}
+.sno h2{
+    display: block;
+    float: left;
+    line-height: 80px;
+}
+.sno input{
+    width: 400px;
+    height: 40px;
+    margin: 20px auto;
+    color: rgba(207, 175, 175, 0.8);
+    border-right: 1px solid skyblue;
+    border-top: 1px solid skyblue;
+    border-bottom: 1px solid skyblue;
+}
+.password h2{
+    display: block;
+    float: left;
+    line-height: 80px;
+}
+.password input{
+    width: 400px;
+    height: 40px;
+    margin: 20px auto;
+    color: rgba(207, 175, 175, 0.8);
+    border-right: 1px solid skyblue;
+    border-top: 1px solid skyblue;
+    border-bottom: 1px solid skyblue;
+}
+.forget_password{
+    width:200px;
+    height:30px;
+    margin-top: 10px;
+    margin-left: 330px;
+    
+
+}
+.forget_password a{
+    
+    color:skyblue;
+    line-height:30px;
+    display: block;
+    margin-left: 20px;
+    float: left;
+    width: 80px;
+}
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+}

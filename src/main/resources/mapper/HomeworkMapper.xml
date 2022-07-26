@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cymabatis.mabatis_try2.mapper.HomeworkMapper">
+
+    <resultMap id="BaseResultMap" type="com.cymabatis.mabatis_try2.model.domain.Homework">
+            <result property="endTime" column="endTime" jdbcType="VARCHAR"/>
+            <result property="funcName" column="funcName" jdbcType="VARCHAR"/>
+            <result property="homeworkName" column="homeworkName" jdbcType="VARCHAR"/>
+            <result property="studentName" column="studentName" jdbcType="VARCHAR"/>
+            <result property="isSubmit" column="isSubmit" jdbcType="VARCHAR"/>
+            <result property="filePath" column="filePath" jdbcType="VARCHAR"/>
+            <result property="score" column="score" jdbcType="DOUBLE"/>
+            <result property="className" column="className" jdbcType="VARCHAR"/>
+            <result property="teacherName" column="teacherName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        endTime,funcName,homeworkName,
+        studentName,isSubmit,filePath,
+        score,className,teacherName
+    </sql>
+</mapper>

@@ -1,0 +1,41 @@
+.topall{
+    margin: 0px auto;
+    width: 1200px;
+    height: 30px;
+    background-color: rgb(246, 246, 246);
+}
+.topall a{
+    color:#333;
+    line-height: 30px;
+    display: block;
+    float: right;
+    font-size: 10px;
+}
+.topall a:hover{
+    color: blue;
+}
+.main_body{
+    background-color: rgba(246, 246, 246,0.6);;
+    margin: 10px auto;
+    width: 1200px;
+    height:1200px;
+    
+}
+.main_body .table_a{
+    width: 1000px;
+    height: 450px;
+    margin: 30px auto;
+}
+#td_a
+{
+    width: 200px;
+}
+.main_body .a1{
+    margin: 20px auto;
+    width: 100px;
+    height: 40px;
+}
+.main_body .a1 input{
+    width: 100px;
+    height: 40px;
+}

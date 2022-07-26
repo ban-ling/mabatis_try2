@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级详情</title>
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\class_more_css.css">
+</head>
+<body background="image/student_bg.jpg">
+    <!-- header -->
+    <div class="topall">
+        <a href="index.html" onclick="alert('成功退出登陆')">欢迎 测试开发者1 登陆！|点击此处退出登陆</a>
+    </div>
+    <!-- 主体部分 -->
+
+    <div class="main_body">
+        <!-- 标题需要更改 -->
+        <h3>正在浏览“[[${session.className}]]”(邀请码为：[[${session.inviteCode}]])：</h3>
+        <br>
+        <form method="post" th:action="@{/deleteClass}">
+        <div style="text-align:left;">
+            <h4 style="color: red">注销班级：(并注销本班所有学生账号)</h4>
+            <p>如需删除，请输入一遍班级名：</p>
+            <input type="text" name="className">
+            <input type="submit" value="确定删除" onclick="alert('已经删除好了！')">
+        </div>
+        </form>
+        <form method="post" th:action="@{/deleteHomework}">
+        <div style="text-align:left;">
+            <h4 style="color: red">删除作业：</h4>
+            <p>如需删除，请输入一遍作业名：</p>
+            <input type="text" name="homeworkName">
+            <input type="submit" value="确定删除" onclick="alert('已经删除好了！')">
+        </div>
+        </form>
+        <form method="post" th:action="@{/deleteStudent}">
+        <div style="text-align:left;">
+            <h4 style="color: red">移出学生：（即注销其账号）</h4>
+            <p>如需删除，请输入一遍学生名：</p>
+            <input type="text" name="studentName">
+            <input type="submit" value="确定删除" onclick="alert('已经删除好了！')">
+        </div>
+        </form>
+        <div class="table_a">
+            <table border="1" style="margin: auto">
+                <thead>
+                    <tr>
+                        <th>作业名称</th>
+                        <th>总人数</th>
+                        <th>及格人数</th>
+                        <th>提交人数</th>
+                        <th>平均分</th>
+                        <th>及格率</th>
+                        <th>点击查看附件详情</th>
+                        <th>批阅输入文件</th>
+                        <th>批阅答案文件</th>
+                        <th>批阅</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <span th:text="${session.notice}" style="color: red"></span>
+                    <tr th:each="homework,status:${session.homeworkList}">
+                        <form id="student_homework" method="post" th:action="@{/score}" enctype="multipart/form-data" accept-charset="UTF-8">
+                            <input type="hidden" th:value="${homework.homeworkName}" name="homeworkName">
+                        <td th:text="${homework.homeworkName}" style="text-align: center;"></td>
+                        <td th:text="${homework.totalPeople}" style="text-align: center;"></td>
+                        <td th:text="${homework.passPeople}" style="text-align: center;"></td>
+                        <td th:text="${homework.submitPeople}" style="text-align: center;"></td>
+                        <td th:text="${homework.averageScore}" style="text-align: center;"></td>
+                        <td>
+                            <div th:if="${homework.submitPeople}" th:text="${#numbers.formatDecimal(homework.passPeople/homework.submitPeople*100,2,2)}+'%'" style="text-align: center;"></div>
+                        </td>
+
+                        <td><a th:href="'javascript:doPost(\'student_homework\',{\'homeworkName\':\'' + ${homework.homeworkName} + '\'})'" >查看学生提交详情</a>
+
+                            <script>
+                                function doPost(to, p) {  // to:提交动作（action）,p:参数
+                                    var myForm = document.createElement("form");
+                                    myForm.method = "post";
+                                    myForm.action = to;
+                                    for (var i in p){
+                                        var myInput = document.createElement("input");
+                                        myInput.setAttribute("name", i);  // 为input对象设置name
+                                        myInput.setAttribute("value", p[i]);  // 为input对象设置value
+                                        myForm.appendChild(myInput);
+                                    }
+                                    document.body.appendChild(myForm);
+                                    myForm.submit();
+                                    document.body.removeChild(myForm);  // 提交后移除创建的form
+                                }
+                            </script>
+                        </td>
+                        <td><input type="file" name="input_txt" multiple>
+                            <br>
+                            <input type="checkbox" name="filedeal" value="文件处理">本作业为文件处理
+                        </td>
+                        <td><input type="file" name="output_txt" multiple></td>
+                        <td><button type="submit">批阅</button></td>
+                        </form>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- 返回键 -->
+        <div class="a1">
+            <form method="post" th:action="@{/student_score}" enctype="multipart/form-data" accept-charset="UTF-8">
+                <input type="submit" value="总体成绩名单">
+            </form>
+        </div>
+
+        <div class="a1">
+            <a href="teacher.html">
+                <input type="button" value="返回" onclick="history.go(-1)">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

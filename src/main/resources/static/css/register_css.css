@@ -1,0 +1,139 @@
+.mainbody{
+    width:1000px;
+    height:600px;
+    margin: 50px auto;
+    background-color: rgba(237,239,251,0.8);
+}
+.mainbody h1{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+.who{
+    margin: auto;
+    margin-top: 60px;
+    margin-left: 200px;
+    height: 30px;
+    width: 300px;
+}
+.who p{
+    line-height: 30px;
+    font-size: 17px;
+    display: block;
+    float: left;
+}
+.who select{
+    float: left;
+    width: 200px;
+    height: 30px;
+    border: 1px;
+}
+.sno{
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 200px;
+    height: 30px;
+    width: 300px;
+}
+.sno p{
+    line-height: 30px;
+    font-size: 17px;
+    display: block;
+    float: left;
+}
+.sno input{
+    height:30px;
+    width: 200px;
+    color: rgba(207, 175, 175, 0.8);
+    border-right: 1px solid skyblue;
+    border-top: 1px solid skyblue;
+    border-bottom: 1px solid skyblue;
+    float: left;
+}
+.passwords{
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 200px;
+    height: 30px;
+    width: 600px;
+}
+.passwords p{
+    line-height: 30px;
+    font-size: 17px;
+    display: block;
+    float: left;
+}
+.passwords input{
+    height:30px;
+    width: 200px;
+    color: rgba(207, 175, 175, 0.8);
+    border-right: 1px solid skyblue;
+    border-top: 1px solid skyblue;
+    border-bottom: 1px solid skyblue;
+    float: left;
+}
+
+.passwords #a{
+    line-height: 30px;
+    font-size: 12px;
+    display: block;
+    float: left;
+    color: rgba(239, 55, 55, 0.897);
+}
+.tel{
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 200px;
+    height: 30px;
+    width: 300px;
+}
+.tel p{
+    line-height: 30px;
+    font-size: 17px;
+    display: block;
+    float: left;
+}
+.tel input{
+    height:30px;
+    width: 200px;
+    color: rgba(207, 175, 175, 0.8);
+    border-right: 1px solid skyblue;
+    border-top: 1px solid skyblue;
+    border-bottom: 1px solid skyblue;
+    float: left;
+}
+.classname{
+    margin: auto;
+    margin-top: 30px;
+    margin-left: 200px;
+    height: 30px;
+    width: 300px;
+}
+.classname p{
+    line-height: 30px;
+    font-size: 17px;
+    display: block;
+    float: left;
+}
+.classname select{
+    float: left;
+    width: 200px;
+    height: 30px;
+    border: 1px;
+}
+.ok input{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
+}
+body{
+    background-repeat: no-repeat;
+    background-color: rgba(76,85,210,1);
+    background-position: center;
+    
+
+}

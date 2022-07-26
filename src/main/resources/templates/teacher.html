@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师平台</title>
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\teacher_css.css">
+</head>
+<body background="image/student_bg.jpg">
+    <!-- header -->
+    <div class="topall">
+        <a href="index.html" onclick="alert('成功退出登陆')">欢迎 测试开发者1 登陆！|点击此处退出登陆</a>
+    </div>
+    <!-- 主体 -->
+        <div class="main_body">
+        <form action="teacher" method="post" th:action="@{/teacher}">
+        <div class="class_havelaunch_fix">
+            <h1>创建班级：</h1>
+            <p>创建班级名：</p>
+            <input type="text" name="className">
+            <input type="submit" value="确定创建" onclick="alert('已经创建好了！')">
+        </div>
+        </form>
+
+
+
+        <!-- 我已经发布的 -->
+        <form action="index" method="post" th:action="@{/class_more}">
+        <div class="class_havelaunch_fix">
+            <h1>已经发布的作业：</h1>
+            <!-- 选择我要查找的班级 -->
+            <p>选择要查询的班级:</p>
+            <select name="className">
+                <option>--选择要查询的班级--</option>
+                <option th:each="classes:${session.classesList}" th:text="${classes.className}"></option>
+            </select>
+            <a href="#">
+                <input type="submit" value="确定查询">
+            </a>
+        </div>
+        </form>
+
+
+
+        <!-- 我要发布 -->
+        <div class="class_nolaunch">
+            <form method="post" th:action="@{/createHomework}" enctype="multipart/form-data">
+            <h1>发布作业：</h1>
+            <!-- 发布作业登记表 -->
+            <div class="launch" >
+                <table class="table_a" border="1" style="margin: auto">
+                    <!-- 选择班级 -->
+                    <tr>
+                        <td>发布目标班级：</td>
+                        <td>
+                            <select name="className">
+                                <option>--选择班级--</option>
+                                <option th:each="classes:${session.classesList}" th:text="${classes.className}"></option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>发布主题：</td>
+                        <td id="a_td"><input name="homeworkName"></td>
+                    </tr>
+                    <tr>
+                        <td>函数名：</td>
+                        <td id="a_td"><input name="funcName"></td>
+                    </tr>
+                    <tr>
+                        <td>截止时间：</td>
+                        <td >
+                            <input name="endTime">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>主要实验内容：</td>
+                        <td id="b_td">
+                            <textarea name="mainContent" >此处是描述信息</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>作业要求：</td>
+                        <td>
+                            <textarea name="request" >此处是描述信息</textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="button_one">
+                <input type="submit" value="发布作业/试卷" onclick="alert('成功发布')">
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

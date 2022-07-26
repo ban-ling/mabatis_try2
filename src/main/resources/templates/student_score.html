@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级详情</title>
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\class_more_css.css">
+</head>
+<body background="image/student_bg.jpg">
+<!-- header -->
+<div class="topall">
+    <a href="index.html" onclick="alert('成功退出登陆')">欢迎 测试开发者1 登陆！|点击此处退出登陆</a>
+</div>
+<!-- 主体部分 -->
+
+<div class="main_body">
+    <!-- 标题需要更改 -->
+    <h3>正在浏览“[[${session.className}]]”(邀请码为：[[${session.inviteCode}]])：</h3>
+
+    <div class="table_a">
+        <table border="1" style="margin: auto">
+            <thead>
+            <tr>
+                <th>学生</th>
+                <th>总成绩</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user:${session.users}">
+
+                <td th:text="${user.userAccount}" style="text-align: center;"></td>
+                <td th:text="${user.score}" style="text-align: center;"></td>
+
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- 返回键 -->
+    <div class="a1">
+        <a href="class_more.html">
+            <input type="button" value="返回" onclick="history.go(-1)">
+        </a>
+        <form method="post" th:action="@{/excel}">
+            <input type="submit" value="生成excel文件">
+        </form>
+        <a th:if="${path}" th:href="${path}" style="color: red;text-align:center;">成绩统计.xlsx</a>
+    </div>
+
+</div>
+
+</body>
+</html>

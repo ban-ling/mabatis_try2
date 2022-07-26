@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生提交附件详情</title>
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\student_homework_css.css">
+</head>
+<body background="image/student_bg.jpg">
+    <!-- header -->
+    <div class="topall">
+        <a href="index.html" onclick="alert('成功退出登陆')">欢迎 测试开发者1 登陆！|点击此处退出登陆</a>
+    </div>
+    <!-- 保存修改 -->
+    <!-- 返回键 -->
+    <div class="other_body">
+        <input type="button" value="确定保存" name="save" onclick="alert('保存成功！')">
+        <a href="class_more.html">
+            <input type="button" value="返回" onclick="history.go(-1)">
+        </a>
+    </div>
+
+
+    </div>
+    <!-- 主体部分 -->
+    <div class="main_body">
+        <!-- 标题需要更改 -->
+        <h3>正在浏览：[[${session.className}]]</h3>
+        <div class="table_a">
+            <table border="1" style="margin: auto">
+                <thread>
+                    <tr>
+                        <th>学生学号姓名</th>
+                        <th>学生分数</th>
+                        <th>学生附件</th>
+                        <th>是否提交</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr th:each="studentHomework:${session.studentHomeworkList}">
+                        <!-- 例子 -->
+                        <td th:text="${studentHomework.studentName}"></td>
+                        <td th:text="${studentHomework.score}"></td>
+                        <td><a th:if="${not #strings.isEmpty(studentHomework.filePath)}" th:text="已提交文件" th:href="${studentHomework.filePath}"></a></td>
+                        <td th:text="${studentHomework.isSubmit}"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</body>
+</html>

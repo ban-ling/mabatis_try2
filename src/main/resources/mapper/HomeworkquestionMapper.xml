@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cymabatis.mabatis_try2.mapper.HomeworkquestionMapper">
+
+    <resultMap id="BaseResultMap" type="com.cymabatis.mabatis_try2.model.domain.Homeworkquestion">
+            <result property="homeworkName" column="homeworkName" jdbcType="VARCHAR"/>
+            <result property="mainContent" column="mainContent" jdbcType="VARCHAR"/>
+            <result property="request" column="request" jdbcType="VARCHAR"/>
+            <result property="teacherName" column="teacherName" jdbcType="VARCHAR"/>
+            <result property="className" column="className" jdbcType="VARCHAR"/>
+            <result property="endTime" column="endTime" jdbcType="VARCHAR"/>
+            <result property="funcName" column="funcName" jdbcType="VARCHAR"/>
+            <result property="totalPeople" column="totalPeople" jdbcType="INTEGER"/>
+            <result property="submitPeople" column="submitPeople" jdbcType="INTEGER"/>
+            <result property="passPeople" column="passPeople" jdbcType="INTEGER"/>
+            <result property="averageScore" column="averageScore" jdbcType="DOUBLE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        homeworkName,mainContent,request,
+        teacherName,className,endTime,
+        funcName,totalPeople,submitPeople,
+        passPeople,averageScore
+    </sql>
+</mapper>

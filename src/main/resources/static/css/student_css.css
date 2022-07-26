@@ -1,0 +1,72 @@
+.topall{
+    margin: 0px auto;
+    width: 1200px;
+    height: 30px;
+    background-color: rgb(246, 246, 246);
+}
+.topall a{
+    color:#333;
+    line-height: 30px;
+    display: block;
+    float: right;
+    font-size: 10px;
+}
+.topall a:hover{
+    color: blue;
+}
+.main_body{
+    background-color: rgba(246, 246, 246,0.8);;
+    margin: 0px auto;
+    width: 1200px;
+    height:3800px;
+    
+}
+.main_body .box{
+    width: 1000px;
+    height: 600px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+
+    
+}
+.cno{
+    width: 1000px;
+    height:60px;
+}
+.cno h2{
+    display: block;
+    float: left;
+    line-height: 60px;
+}
+.cno h3{
+    display: block;
+    float: right;
+    line-height: 60px;
+}
+hr{
+    size: 10;
+    color: black;
+}
+.box .homework{
+    margin: 20px auto;
+    
+}
+body{
+    background-color: rgb(76,85,210);
+}
+#fileinp{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+#btn{
+    cursor: pointer;
+    padding: 5px 10px;
+    background: #FFF;
+    color: #eea931;
+    border: solid 1px #eea931;
+    border-radius: 5px;
+    height: 31px;
+    width: 81px;
+}

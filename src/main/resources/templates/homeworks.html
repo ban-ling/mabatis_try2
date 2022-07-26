@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\homework_css.css">
+</head>
+<body background="image/student_bg.jpg">
+    <!-- header -->
+    <div class="topall">
+        <a href="index.html" onclick="alert('成功退出登陆')">欢迎 测试开发者1 登陆！|点击此处退出登陆</a>
+    </div>
+    <!-- 主题作业内容 -->
+    <div class="mian_body" >
+        <div class="tbe" style="word-break: break-all;">
+            <table  border="1" >
+                <tr>
+                    <td>
+                        作业名称：
+                    </td>
+                    <!-- 名称· -->
+                    <td th:text="${homeworkquestion1.homeworkName}" class="tda">
+                    </td>
+                </tr>
+                <tr>
+                <tr>
+                    <td>
+                        函数名：
+                    </td>
+                    <!-- 名称· -->
+                    <td th:text="${homeworkquestion1.funcName}" class="tda">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        截止时间：
+                    </td>
+                    <!-- 截止时间例子 -->
+                    <td th:text="${homeworkquestion1.endTime}" class="tda">
+                        2022-8-1
+                    </td>
+                </tr>
+                <tr>
+                    <td>作业内容：</td>
+                    <td th:text="${homeworkquestion1.mainContent}" class="tda2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>实验要求：</td>
+                    <td th:text="${homeworkquestion1.request}" class="tda">
+                    </td>
+                </tr>
+                <tr></tr>
+            </table>
+        </div>
+        <!-- 确认按钮 -->
+        <a>
+            <input type="button" value="返回" onclick="history.go(-1)">
+        </a>
+    </div>
+</body>
+</html>

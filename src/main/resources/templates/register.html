@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号注册界面</title>
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\register_css.css">
+</head>
+<body background="image/logo_school.png">
+    <!-- 主题框架  -->
+    <form class="right_body" action="index" method="post" th:action="@{/register}">
+    <div class="mainbody">
+        <h1>苏州大学学生作业提交系统注册界面</h1>
+        <!-- 身份选择 -->
+        <div class="who">
+            <p>身份：</p>
+            <select name="userRole">
+                <option value="学生">学生</option>
+                <option value="老师">老师</option>
+            </select>
+        </div>
+
+        <!-- 学号输入 -->
+        <div class="sno">
+            <p>学号|工号：</p>
+            <input placeholder="请输入学号" name="userAccount">
+        </div>
+        <!-- 密码 -->
+        <div class="passwords">
+            <p>密码：</p>
+            <input type="password" name="userPassword">
+            <p id="a">**注意：至少输入包含大写和小写字母**</p>
+        </div>
+        <!-- 密码 -->
+        <div class="passwords">
+            <p>再次输入密码：</p>
+            <input type="password" name="checkPassword">
+        </div>
+        <!-- 本次上课的班级 -->
+        <div class="classname">
+            <p>班级邀请码：</p>
+            <input type="text" name="inviteCode">
+        </div>
+        <!-- 确定注册 -->
+        <div class="ok">
+            <input type="submit" value="确定注册">
+            <input type="button" value="返回" onclick="history.go(-1)">
+        </div>
+    </div>
+        </form>
+    <script th:inline="javascript">
+        window.onload = function () {
+            if([[${notice}]] == "empty") {
+                alert('请填写完整信息!');
+            }
+            if([[${notice}]] == "exist") {
+                alert('此账号已存在！');
+            }
+            if([[${notice}]] == "notsame") {
+                alert('密码和校验密码不一致！');
+            }
+            if([[${notice}]] == "failed") {
+                alert('注册失败！');
+            }
+            if([[${notice}]] == "noclass"){
+                alert("班级邀请码错误！")
+            }
+        }
+
+    </script>
+</body>
+</html>

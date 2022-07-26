@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生提交界面</title>
+    <link rel="stylesheet" href="css\common.css">
+    <link rel="stylesheet" href="css\student_css.css">
+</head>
+<body background="image/student_bg.jpg">
+    <!-- header -->
+    <div class="topall">
+        <a href="index.html" onclick="alert('成功退出登陆')">欢迎 测试开发者1 登陆！|点击此处退出登陆</a>
+    </div>
+    <!-- 主要部分 -->
+    <div class="main_body w">
+        <div class="box" >
+            <!-- 课程名字 -->
+            <div class="cno">
+                <h2>任课班级：[[${session.Loginuser.className}]]</h2>
+            </div>
+            <hr>
+            <table class="homework" border="1" style="margin: auto">
+                <thead>
+                    <tr >
+                        <th >作业内容</th>
+                        <th>发布时间</th>
+                        <th>选择语言</th>
+                        <th>函数名</th>
+                        <th>作业上传</th>
+                        <th>已提交附件</th>
+                        <th>分数</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="homework:${session.homeworkList}">
+                        <form role="form" th:action="@{/upload}" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+                        <td>
+                            <a th:href="'javascript:doPost(\'homeworks.html\',{\'homeworkName\':\'' + ${homework.homeworkName} + '\'})'" th:text="${homework.homeworkName}"></a>
+                            <input type="hidden" th:value="${homework.homeworkName}" name="homeworkName">
+                            <script>
+                                function doPost(to, p) {  // to:提交动作（action）,p:参数
+                                    var myForm = document.createElement("form");
+                                    myForm.method = "post";
+                                    myForm.action = to;
+                                    for (var i in p){
+                                        var myInput = document.createElement("input");
+                                        myInput.setAttribute("name", i);  // 为input对象设置name
+                                        myInput.setAttribute("value", p[i]);  // 为input对象设置value
+                                        myForm.appendChild(myInput);
+                                    }
+                                    document.body.appendChild(myForm);
+                                    myForm.submit();
+                                    document.body.removeChild(myForm);  // 提交后移除创建的form
+                                }
+                            </script>
+                        </td>
+                        <td>
+                            <p th:text="${homework.endTime}"></p>
+                        </td>
+                        <td>
+                            <select>
+                                <option>
+                                    python
+                                </option>
+
+                            </select>
+                        </td>
+                            <td>
+                                <p th:text="${homework.funcName}"></p>
+                            </td>
+                        <td>
+
+                            <input type="file" name="homeworkFile" multiple>
+                            <button type="submit">提交文件</button>
+                        </td>
+                        <td>
+                            <a th:if="${not #strings.isEmpty(homework.filePath)}" th:text="${homework.homeworkName}" th:href="${homework.filePath}"></a>
+                        </td>
+                        <td>
+                            <p th:text="${homework.score}"></p>
+                        </td>
+                        </form>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <hr>
+
+    </div>
+</body>
+</html>
